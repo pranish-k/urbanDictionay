@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bouncing Ball with JavaScript</title>
+   <style>
+      #container {
+         width: 500px;
+         height: 300px;
+         border: 1px solid black;
+         position: relative;
+         overflow: hidden;
+      }
+
+      #ball {
+         width: 50px;
+         height: 50px;
+         background-color: blue;
+         border-radius: 25px;
+         position: absolute;
+      }
+   </style>
+</head>
+<body>
+   <div id="container">
+      <div id="ball"></div>
+   </div>
+   <script>
+      const ball = document.getElementById("ball");
+      const container = document.getElementById("container");
+      let x = 0;
+      let y = 0;
+      let xSpeed = 5;
+      let ySpeed = 5;
+
+      function animate() {
+         x += xSpeed;
+         y += ySpeed;
+
+         if (x + 50 > container.clientWidth || x < 0) {
+            xSpeed = -xSpeed;
+         }
+
+         if (y + 50 > container.clientHeight || y < 0) {
+            ySpeed = -ySpeed;
+         }
+
+         ball.style.left = x + "px";
+         ball.style.top = y + "px";
+
+         requestAnimationFrame(animate);
+      }
+
+      animate();
+   </script>
+</body>
+</html>

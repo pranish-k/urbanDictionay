@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .navbar ul li:hover {
+            color: #ddd;
+        }
+
+        .main {
+            padding: 20px;
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(76, 28, 28);
+            border-radius: 25px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Welcome to My Personal Website</h1>
+        <p>This is a simple personal website layout.</p>
+        <div id="ball"></div>
+    </div>
+
+    <div class="footer">
+        Copyright &copy; 2023
+    </div>
+
+    <script>
+        const ball = document.getElementById("ball");
+        const main = document.querySelector(".main");
+        let x = 0;
+        let y = 0;
+        let xSpeed = 5;
+        let ySpeed = 5;
+    
+        function animate() {
+            x += xSpeed;
+            y += ySpeed;
+    
+            const mainRect = main.getBoundingClientRect();
+    
+            if (x + 50 > mainRect.width || x < 0) {
+                xSpeed = -xSpeed;
+            }
+    
+            if (y + 50 > mainRect.height || y < 0) {
+                ySpeed = -ySpeed;
+            }
+    
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+    
+            requestAnimationFrame(animate);
+        }
+    
+        animate();
+    </script>
+
+
+</body>
+</html>

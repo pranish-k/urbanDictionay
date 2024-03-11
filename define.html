@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Define a Word</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            color: #280a0a;
+        }
+
+        .content {
+            margin: 20px;
+        }
+
+        #word, #definition, #sentence {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #444;
+        }
+
+        .link {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="header">Define a Word</h1>
+
+    <form class="content">
+        <label for="word">Word:</label>
+        <input type="text" id="word" name="word" required><br><br>
+        
+        <label for="definition">Definition:</label>
+        <textarea id="definition" name="definition" required></textarea><br><br>
+        
+        <label for="sentence">Use in a Sentence:</label>
+        <textarea id="sentence" name="sentence" required></textarea><br><br>
+        
+        <input type="submit" value="Submit" class="button">
+    </form>
+
+</body>
+
+</html>
